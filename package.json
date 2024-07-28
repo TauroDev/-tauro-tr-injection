@@ -1,0 +1,23 @@
+{
+  "name": "@tauro/tr-injection",
+  "version": "0.0.1",
+  "description": "A simple dependency injection container for TypeScript using decorators.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [
+    "dependency-injection",
+    "typescript",
+    "decorators"
+  ],
+  "author": "Andres Ria",
+  "license": "MIT",
+  "dependencies": {
+    "reflect-metadata": "^0.1.13"
+  },
+  "devDependencies": {
+    "typescript": "^4.3.5"
+  }
+}

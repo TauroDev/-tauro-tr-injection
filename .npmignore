@@ -1,0 +1,9 @@
+# Ignorar todos los archivos TypeScript
+*.ts
+src/**/*.ts
+
+# Ignorar directorios de compilación
+node_modules
+
+# Ignorar archivos de configuración y otros archivos innecesarios
+package-lock.json
