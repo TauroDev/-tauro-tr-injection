@@ -1,4 +1,4 @@
-# My Dependency Container
+# @tauro/tr-injection
 
 A simple dependency injection container for TypeScript using decorators.
 
