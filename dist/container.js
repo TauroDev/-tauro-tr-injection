@@ -1,10 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.container = void 0;
-exports.AddClassContainer = AddClassContainer;
-exports.AddPropertyContainer = AddPropertyContainer;
-exports.AddMethodContainer = AddMethodContainer;
-exports.ContainerGet = ContainerGet;
+exports.ContainerGet = exports.AddMethodContainer = exports.AddPropertyContainer = exports.AddClassContainer = exports.container = void 0;
 require("reflect-metadata");
 class ContainerBuilder {
     constructor() {
@@ -58,18 +54,21 @@ function AddClassContainer(serviceId) {
         exports.container.add(serviceId, new target());
     };
 }
+exports.AddClassContainer = AddClassContainer;
 function AddPropertyContainer(serviceId) {
     return function (target, propertyKey) {
         const value = target[propertyKey];
         exports.container.add(serviceId, value);
     };
 }
+exports.AddPropertyContainer = AddPropertyContainer;
 function AddMethodContainer(serviceId) {
     return function (target, propertyKey, descriptor) {
         const originalMethod = descriptor.value;
         exports.container.add(serviceId, originalMethod);
     };
 }
+exports.AddMethodContainer = AddMethodContainer;
 function ContainerGet(serviceId) {
     return function (target, propertyKey) {
         Object.defineProperty(target, propertyKey, {
@@ -81,3 +80,4 @@ function ContainerGet(serviceId) {
         });
     };
 }
+exports.ContainerGet = ContainerGet;
